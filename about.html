@@ -7,67 +7,75 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>About Us</h1>
-    </header>
-    <main>
-        <section class="about-section">
-            <h2>About FindTheCase.com</h2>
-            <div class="language-toggle">
-                <button onclick="showContent('english')">English</button>
-                <button onclick="showContent('hindi')">हिंदी</button>
-            </div>
-            <div id="content-english" class="content">
-                <p>
-                    FindTheCase.com is a dedicated platform committed to empowering citizens by offering comprehensive and 
-                    easily navigable information about the laws and acts applicable to various crimes under the Indian Constitution.
-                </p>
-                <p>
-                    We aim to bridge the gap between citizens and the legal system by providing clarity on legal rights, applicable 
-                    laws, and the justice framework. Whether you are a victim, a witness, or simply someone seeking knowledge about 
-                    your rights, FindTheCase.com ensures you are equipped with accurate and reliable information to navigate the complexities 
-                    of the justice system with confidence.
-                </p>
-                <p>
-                    Our mission extends beyond merely informing; we strive to enable every individual to understand their legal standing and 
-                    pursue justice effectively. At FindTheCase.com, we believe in fostering a legally aware society where justice is not just 
-                    a right but an achievable reality for everyone.
-                </p>
-            </div>
-            <div id="content-hindi" class="content" style="display:none;">
-                <p>
-                    FindTheCase.com एक समर्पित मंच है, जो नागरिकों को भारतीय संविधान के तहत विभिन्न अपराधों पर लागू कानूनों और अधिनियमों के 
-                    बारे में व्यापक और आसानी से सुलभ जानकारी प्रदान करके सशक्त बनाने के लिए प्रतिबद्ध है।
-                </p>
-                <p>
-                    हम नागरिकों और न्याय प्रणाली के बीच की खाई को पाटने के लिए प्रयासरत हैं। हमारा उद्देश्य कानूनी अधिकारों, प्रासंगिक कानूनों, 
-                    और न्याय प्रणाली की स्पष्ट जानकारी प्रदान करना है। चाहे आप अपराध के शिकार हों, गवाह हों, या अपने अधिकारों के बारे में 
-                    ज्ञान प्राप्त करना चाहते हों, FindTheCase.com आपको सटीक और विश्वसनीय जानकारी के साथ सशक्त बनाता है।
-                </p>
-                <p>
-                    हमारा मिशन केवल जानकारी प्रदान करने तक सीमित नहीं है; बल्कि, यह सुनिश्चित करना है कि हर व्यक्ति अपनी कानूनी स्थिति को 
-                    समझे और न्याय प्राप्त करने में सक्षम हो। FindTheCase.com पर, हम एक ऐसी कानूनी जागरूक समाज की परिकल्पना करते हैं, 
-                    जहां न्याय केवल एक अधिकार नहीं बल्कि सभी के लिए एक वास्तविकता है।
-                </p>
-            </div>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2025 FindTheCase.com. All Rights Reserved.</p>
-    </footer>
-    <script>
-        function showContent(language) {
-            const englishContent = document.getElementById('content-english');
-            const hindiContent = document.getElementById('content-hindi');
 
-            if (language === 'english') {
-                englishContent.style.display = 'block';
-                hindiContent.style.display = 'none';
-            } else {
-                englishContent.style.display = 'none';
-                hindiContent.style.display = 'block';
-            }
+<header>
+    <h1>About Us</h1>
+</header>
+
+<main>
+    <section class="about-section">
+        <h2>About FindTheCase.com</h2>
+
+        <div class="language-toggle">
+            <button id="btn-en" class="active" onclick="showContent('english')">English</button>
+            <button id="btn-hi" onclick="showContent('hindi')">हिंदी</button>
+        </div>
+
+        <div id="content-english" class="content">
+            <p>
+                FindTheCase.com is a dedicated platform committed to empowering citizens by offering comprehensive and
+                easily accessible information about laws and acts applicable to various crimes under the Indian Constitution.
+            </p>
+            <p>
+                Our objective is to bridge the gap between citizens and the legal system by providing clarity on legal rights,
+                applicable laws, and judicial procedures. Whether you are a victim, a witness, or a concerned citizen,
+                FindTheCase.com helps you understand the law with confidence.
+            </p>
+            <p>
+                We envision a legally aware society where justice is accessible, understandable, and achievable for everyone.
+            </p>
+        </div>
+
+        <div id="content-hindi" class="content hidden">
+            <p>
+                FindTheCase.com एक समर्पित मंच है जो नागरिकों को भारतीय संविधान के अंतर्गत विभिन्न अपराधों से जुड़े
+                कानूनों और अधिनियमों की सटीक एवं सरल जानकारी प्रदान करता है।
+            </p>
+            <p>
+                हमारा उद्देश्य नागरिकों और न्याय प्रणाली के बीच की दूरी को कम करना है, ताकि प्रत्येक व्यक्ति अपने
+                कानूनी अधिकारों और न्यायिक प्रक्रियाओं को सही रूप में समझ सके।
+            </p>
+            <p>
+                हम एक ऐसे कानूनी रूप से जागरूक समाज की कल्पना करते हैं जहाँ न्याय सभी के लिए सुलभ और प्राप्त करने योग्य हो।
+            </p>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>© 2025 FindTheCase.com. All Rights Reserved.</p>
+</footer>
+
+<script>
+    function showContent(language) {
+        const en = document.getElementById("content-english");
+        const hi = document.getElementById("content-hindi");
+        const btnEn = document.getElementById("btn-en");
+        const btnHi = document.getElementById("btn-hi");
+
+        if (language === "english") {
+            en.classList.remove("hidden");
+            hi.classList.add("hidden");
+            btnEn.classList.add("active");
+            btnHi.classList.remove("active");
+        } else {
+            hi.classList.remove("hidden");
+            en.classList.add("hidden");
+            btnHi.classList.add("active");
+            btnEn.classList.remove("active");
         }
-    </script>
+    }
+</script>
+
 </body>
 </html>
